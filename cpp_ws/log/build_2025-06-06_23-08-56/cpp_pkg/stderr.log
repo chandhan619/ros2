@@ -1,0 +1,8 @@
+[01m[K/home/chandhan/Documents/ros2/cpp_ws/src/cpp_pkg/src/subscriber_node.cpp:7:10:[m[K [01;31m[Kfatal error: [m[Kmemory>r: No such file or directory
+    7 | #include [01;31m[K<memory>ro[m[K
+      |          [01;31m[K^~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/subscriber.dir/build.make:76: CMakeFiles/subscriber.dir/src/subscriber_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/subscriber.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

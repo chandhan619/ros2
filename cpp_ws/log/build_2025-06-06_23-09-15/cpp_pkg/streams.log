@@ -1,0 +1,28 @@
+[0.007s] Invoking command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg -- -j16 -l16
+[0.046s] [ 25%] [32mBuilding CXX object CMakeFiles/subscriber.dir/src/subscriber_node.cpp.o[0m
+[0.058s] [ 75%] Built target publisher
+[6.262s] [100%] [32m[1mLinking CXX executable subscriber[0m
+[6.484s] [100%] Built target subscriber
+[6.493s] Invoked command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg -- -j16 -l16
+[6.500s] Invoking command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg
+[6.505s] -- Install configuration: ""
+[6.506s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/lib/cpp_pkg/publisher
+[6.507s] -- Set non-toolchain portion of runtime path of "/home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/lib/cpp_pkg/publisher" to ""
+[6.507s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/lib/cpp_pkg/subscriber
+[6.513s] -- Set non-toolchain portion of runtime path of "/home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/lib/cpp_pkg/subscriber" to ""
+[6.513s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+[6.513s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+[6.514s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+[6.514s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+[6.514s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+[6.514s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+[6.514s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+[6.515s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+[6.515s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+[6.515s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+[6.515s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/package.dsv
+[6.515s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+[6.516s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+[6.516s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+[6.516s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/package.xml
+[6.518s] Invoked command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg

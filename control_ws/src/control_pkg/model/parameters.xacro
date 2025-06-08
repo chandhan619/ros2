@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- This file is part of the control_pkg package -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" xmlns:control_pkg="http://www.control_pkg.org">
+
+  <xacro:property name="robot_name" value="control_robot"/>
+  <xacro:property name="robot_namespace" value="/control_robot"/>
+
+  <!-- Define robot parameters -->
+  <xacro:property name="a" value="0.1"/>
+  <xacro:property name="b" value="0.1"/>
+  <xacro:property name="c" value="0.1"/>
+
+  <xacro:property name="s" value="${c/2}"/>
+  <xacro:property name="q" value="${c-c/4}"/>
+</robot>

@@ -1,0 +1,48 @@
+[0.009s] Invoking command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg -- -j16 -l16
+[0.033s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.199s] -- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.221s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.228s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.236s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.248s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.297s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.298s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.353s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.403s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.415s] -- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.483s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.483s] -- Configured cppcheck include dirs: 
+[0.483s] -- Configured cppcheck exclude dirs and/or files: 
+[0.483s] -- Added test 'lint_cmake' to check CMake code style
+[0.484s] -- Added test 'uncrustify' to check C / C++ code style
+[0.484s] -- Configured uncrustify additional arguments: 
+[0.484s] -- Added test 'xmllint' to check XML markup files
+[0.485s] -- Configuring done (0.5s)
+[0.497s] -- Generating done (0.0s)
+[0.501s] -- Build files have been written to: /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg
+[0.548s] [ 75%] [32mBuilding CXX object CMakeFiles/subscriber.dir/src/subscriber_node.cpp.o[0m
+[0.548s] [ 75%] Built target publisher
+[7.085s] [100%] [32m[1mLinking CXX executable subscriber[0m
+[7.322s] [100%] Built target subscriber
+[7.332s] Invoked command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg -- -j16 -l16
+[7.340s] Invoking command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg
+[7.347s] -- Install configuration: ""
+[7.347s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/lib/cpp_pkg/publisher
+[7.347s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/lib/cpp_pkg/subscriber
+[7.355s] -- Set non-toolchain portion of runtime path of "/home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/lib/cpp_pkg/subscriber" to ""
+[7.355s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+[7.355s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+[7.356s] -- Installing: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/package.dsv
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+[7.356s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+[7.357s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+[7.357s] -- Up-to-date: /home/chandhan/Documents/ros2/cpp_ws/install/cpp_pkg/share/cpp_pkg/package.xml
+[7.358s] Invoked command in '/home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chandhan/Documents/ros2/cpp_ws/build/cpp_pkg
