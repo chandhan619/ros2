@@ -4,5 +4,6 @@
         "string": "cpp",
         "string_view": "cpp",
         "span": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/chandhan/Documents/ros2/control_ws/src/control_pkg"
 }
