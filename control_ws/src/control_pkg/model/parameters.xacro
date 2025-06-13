@@ -8,8 +8,48 @@
   <!-- Define robot parameters -->
   <xacro:property name="a" value="0.1"/>
   <xacro:property name="b" value="0.1"/>
-  <xacro:property name="c" value="0.1"/>
+  <xacro:property name="c" value="0.8"/>
 
+  <!-- Center of mass -->
   <xacro:property name="s" value="${c/2}"/>
+
+  <!-- First Joint position -->
   <xacro:property name="q" value="${c-c/4}"/>
+
+  <!-- Material Density -->
+  <xacro:property name="d" value="2710"/>
+
+  <!-- Mass -->
+  <xacro:property name="m" value="${d * a * b * c}"/>
+
+  <!-- Inertia -->
+  <xacro:property name="Ixx" value="${m * (b*b + c*c)/12}"/>
+  <xacro:property name="Iyy" value="${m * (a*a + c*c)/12}"/>
+  <xacro:property name="Izz" value="${m * (a*a + b*b)/12}"/>
+
+  <!-- Inertial sections of the body -->
+  <xacro:macro name="inertial_body">
+    <inertial>
+      <origin xyz="0 0 ${s}" rpy="0 0 0"/>
+      <mass value="${m}"/>
+      <inertia ixx="${Ixx}" ixy="0" ixz="0" iyy="${Iyy}" iyz="0" izz="${Izz}"/>
+    </inertial>
+  </xacro:macro>
+
+<!-- Colors -->
+  <xacro:macro name="colors">
+    <material name="red">
+      <color rgba="1 0 0 1"/>
+    </material>
+    <material name="green">
+      <color rgba="0 1 0 1"/>
+    </material>
+    <material name="blue">
+      <color rgba="0 0 1 1"/>
+    </material>
+    <material name="yellow">
+      <color rgba="1 1 0 1"/>
+    </material>
+  </xacro:macro>
+
 </robot>

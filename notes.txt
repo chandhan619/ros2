@@ -17,3 +17,5 @@ add this line in the VS code "c_cpp_properties.json" to fix cpp header files not
 
 control package creation
 ros2 pkg create --build-type ament_cmake control_pkg
+
+colcon build --symlink-install --packages-select control_pkg
