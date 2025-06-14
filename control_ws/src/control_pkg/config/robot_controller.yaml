@@ -1,17 +1,17 @@
 controller_manager:
   ros__parameters:
-    update_rate: 10
+    update_rate: 10  # Hz
 
-    joint_state_controller:
-      type: "joint_state_broadcaster/jointStateBroadcaster"
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
       publish_rate: 50
 
-    forward_command_controller:
-      type: "forward_command_controller/ForwardCommandController"
+    forward_position_controller:
+      type: position_controllers/ForwardCommandController
       publish_rate: 50
 
-forward_command_controller:
+forward_position_controller:
   ros__parameters:
     joints:
-      - "first_joint"
-    interface_name: "position"
+      - first_joint
+    interface_name: position

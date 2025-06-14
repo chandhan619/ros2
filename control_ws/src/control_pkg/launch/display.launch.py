@@ -4,7 +4,7 @@ import launch_ros
 import os
 import xacro
 
-package_name = 'control_pkg'
+packageName = 'control_pkg'
 
 xacroRelativePath = 'model/model.xacro'
 
@@ -13,65 +13,57 @@ rvizRelativePath = 'config/config.rviz'
 ros2ControlRelativePath = 'config/robot_controller.yaml'
 
 def generate_launch_description():
-    pkgPath = launch_ros.substitutions.FindPackageShare(package=package_name).find(package_name)
-    
+
+    pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
     xacroModelPath = os.path.join(pkgPath, xacroRelativePath)
     rvizConfigPath = os.path.join(pkgPath, rvizRelativePath)
     ros2ControlPath = os.path.join(pkgPath, ros2ControlRelativePath)
-    
-    print(f'Xacro Model Path: {xacroModelPath}')
-    print(f'RViz Config Path: {rvizConfigPath}')
-    print(f'ros2_control Config Path: {ros2ControlPath}')
 
-    robot_desc = xacro.process_file(xacroModelPath).toxml()
+    robotDesc = xacro.process_file(xacroModelPath).toxml()
 
-    robot_description = {'robot_description': robot_desc}
+    robotDescription = {'robot_description':robotDesc}
 
-    robot_state_publisher_node = launch_ros.actions.Node(
+    #robot state publisher node
+    robotStatePublisherNode = launch_ros.actions.Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
-        parameters=[robot_description],
-        output='both'
+        output='both',
+        parameters=[robotDescription]
     )
-    rviz_node = launch_ros.actions.Node(
+    #rviz node
+    rvizNode = launch_ros.actions.Node(
         package='rviz2',
         executable='rviz2',
         name='rviz2',
-        arguments=['-d', rvizConfigPath],
-        output='screen'
+        output='screen',
+        arguments=['-d', rvizConfigPath]
     )
-    control_node = launch_ros.actions.Node(
+    #ros2 control node
+    ros2ControlNode = launch_ros.actions.Node(
         package='controller_manager',
         executable='ros2_control_node',
-        name='controller_manager',
+        name='ros2_control_node',
         parameters=[ros2ControlPath],
-        output='screen'
+        output='both'
     )
-    joint_state_broadcaster_spawner = launch_ros.actions.Node(
+    #joint state broadcaster node
+    joint_State_Broadcaster_spawner = launch_ros.actions.Node(
         package='controller_manager',
         executable='spawner',
-        arguments= ['joint_state_broadcaster'],
+        arguments=['joint_state_broadcaster'],
     )
-
-    robot_controller_spawner = launch_ros.actions.Node(
+    # forward position controller node
+    robot_control_spawner = launch_ros.actions.Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['forward_position_controller','--param-file', ros2ControlPath],
-    )   
+        arguments=['forward_position_controller','--param-file', ros2ControlPath]
+    )
 
     return launch.LaunchDescription([
-        launch.actions.DeclareLaunchArgument(
-            name='gui', 
-            default_value='true',
-            description='Flag to enable/disable RViz GUI'
-        ),
-        robot_state_publisher_node,
-        control_node,
-        joint_state_broadcaster_spawner,
-        robot_controller_spawner,
-        launch.actions.IfCondition(
-            LaunchConfiguration('gui'),
-            rviz_node
-        )
+        robotStatePublisherNode,
+        rvizNode,
+        ros2ControlNode,
+        joint_State_Broadcaster_spawner,
+        robot_control_spawner
     ])

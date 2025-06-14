@@ -1,81 +1,83 @@
 <?xml version="1.0"?>
-<!-- This file is part of the control_pkg package -->
-
-<robot name="simple robot" xmlns:xacro="http://www.ros.org/wiki/xacro" xmlns:control_pkg="http://www.control_pkg.org">
-  
-  <xacro:include filename="$(find control_pkg)/model/parameters.xacro"/>
-  
-  <link name="world"></link>
-  
-  <link name="first_link">
-    <visual>
-      <origin xyz="0 0 ${s}" rpy="0 0 0"/>
-      <geometry>
-        <box size="${a} ${b} ${c}"/>
-      </geometry>
-      <material name="red"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 ${s}" rpy="0 0 0"/>
-      <geometry>
-        <box size="${a} ${b} ${c}"/>
-      </geometry>
-    </collision>
-    <xacro:inertial_body/>
-  </link>
-
-  <link name="second_link">
-    <visual>
-      <origin xyz="0 0 ${s}" rpy="0 0 0"/>
-      <geometry>
-        <box size="${a} ${b} ${c}"/>
-      </geometry>
-      <material name="green"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 ${s}" rpy="0 0 0"/>
-      <geometry>
-        <box size="${a} ${b} ${c}"/>
-      </geometry>
-    </collision>
-    <xacro:inertial_body/>
-  </link>
-
-  <joint name="fixed_joint" type="fixed">
-    <parent link="world" />
-    <child link="first_link"/>
-  </joint>
-
-  <joint name="first_joint" type="revolute">
-    <parent link="first_link"/>
-    <child link="second_link"/>
-    <origin xyz="0 ${b} ${q}" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="1000" velocity="10" lower="-3.14" upper="3.14"/>
-    <dynamics damping="1.0" friction="1.0"/>
-  </joint>
-  
-  <ros2_control name="RobotController" type="system">
+<robot name="simple_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
     
-    
-    <hardware>
-      <plugin>mock_components/GenericSystem</plugin>
-      <param name="calculate_dynamics">false</param>
-      <param name="custom_interface_with_following_offset"></param>
-      <param name="disable_commands">false</param>
-      <param name="mock_gpio_commands">false</param>
-      <param name="mock_sensor_commands">false</param>
-      <param name="position_state_following_offset">0.0</param>
-    </hardware>
+    <xacro:include filename="$(find control_pkg)/model/parameters.xacro"/>
 
-    <joint name="first_joint">
-      <command_interface name="position">
-        <param name="min">-3.14</param>
-        <param name="max">3.14</param>
-      </command_interface>
-      <state_interface name="position"/>
+    <!-- World Link -->
+    <link name="world"></link>
+
+    <!-- Fixed Joint -->
+    <joint name="fixed_joint" type="fixed">
+        <parent link="world"/>
+        <child link="first_link"/>
     </joint>
-    
-  </ros2_control>
 
+    <!-- First Link -->
+    <link name="first_link">
+        <visual>
+            <geometry>
+                <box size="${a} ${b} ${c}"/>
+            </geometry>
+            <origin xyz="0 0 ${s}" rpy="0 0 0"/>
+            <material name="Red"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${a} ${b} ${c}"/>
+            </geometry>
+            <origin xyz="0 0 ${s}" rpy="0 0 0"/>
+        </collision>
+        <xacro:inertial_body/>
+    </link>
+
+    <!-- Second Link -->
+    <link name="second_link">
+        <visual>
+            <geometry>
+                <box size="${a} ${b} ${c}"/>
+            </geometry>
+            <origin xyz="0 0 ${s}" rpy="0 0 0"/>
+            <material name="Green"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${a} ${b} ${c}"/>
+            </geometry>
+            <origin xyz="0 0 ${s}" rpy="0 0 0"/>
+        </collision>
+        <xacro:inertial_body/>
+    </link>
+
+    <!-- First Joint -->
+    <joint name="first_joint" type="revolute">
+        <parent link="first_link"/>
+        <child link="second_link"/>
+        <origin xyz="0 ${b} ${q}" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="5000" velocity="10" lower="-1.571" upper="1.571"/>
+        <dynamics damping="1.0" friction="1.0"/>
+    </joint>
+
+
+
+    
+    <ros2_control name="RobotController" type="system">
+        <hardware>
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="calculate_dynamics">false</param>
+            <param name="custom_interface_with_following_offset"></param>
+            <param name="disable_commands">false</param>
+            <param name="mock_gpio_commands">false</param>
+            <param name="mock_sensor_commands">false</param>
+            <param name="position_state_following_offset">0.0</param>
+        </hardware>
+
+        <joint name="first_joint">
+            <command_interface name="position">
+                <param name="min" value="-1.571"/>
+                <param name="max" value="1.571"/>
+            </command_interface>
+            <state_interface name="position"/>
+        </joint>
+    </ros2_control>
 </robot>
