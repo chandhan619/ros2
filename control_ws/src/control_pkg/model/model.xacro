@@ -6,12 +6,6 @@
     <!-- World Link -->
     <link name="world"></link>
 
-    <!-- Fixed Joint -->
-    <joint name="fixed_joint" type="fixed">
-        <parent link="world"/>
-        <child link="first_link"/>
-    </joint>
-
     <!-- First Link -->
     <link name="first_link">
         <visual>
@@ -48,6 +42,12 @@
         <xacro:inertial_body/>
     </link>
 
+    <!-- Fixed Joint -->
+    <joint name="fixed_joint" type="fixed">
+        <parent link="world"/>
+        <child link="first_link"/>
+    </joint>
+
     <!-- First Joint -->
     <joint name="first_joint" type="revolute">
         <parent link="first_link"/>
@@ -58,9 +58,6 @@
         <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
-
-
-    
     <ros2_control name="RobotController" type="system">
         <hardware>
             <plugin>mock_components/GenericSystem</plugin>
