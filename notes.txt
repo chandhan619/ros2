@@ -9,6 +9,7 @@ dirname $(dirname $(which ros2))
 create a cpp pkg and inside cpp_ws create src and run following cmg
 ros2 pkg create --build-type ament_cmake cpp_pkg
 ros2 pkg create --build-type ament_cmake control_pkg
+ros2 pkg create --build-type ament_cmake py_pkg
 
 to build cpp package 
 colcon build --packages-select cpp_pkg
@@ -16,9 +17,8 @@ colcon build --packages-select cpp_pkg
 add this line in the VS code "c_cpp_properties.json" to fix cpp header files not found issue
 "/opt/ros/jazzy/include/**"
 
-control package creation
-ros2 pkg create --build-type ament_cmake control_pkg
-
+Build Package cmd
+colcon build --packages-select cpp_pkg
 colcon build --symlink-install --packages-select control_pkg
 
 
