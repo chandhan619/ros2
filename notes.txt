@@ -28,6 +28,7 @@ ros2 pkg create --build-type ament_python --license Apache-2.0 py_pubsub
 
 to build cpp package 
 colcon build --packages-select cpp_pkg
+colcon build --symlink-install --packages-select control_pkg
 
 
 
