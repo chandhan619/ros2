@@ -7,7 +7,6 @@
         "chrono": "cpp"
     },
     "cmake.sourceDirectory": "/home/chandhan/Documents/ros2/control_ws/src/control_pkg",
-      // other settings
     "urdf-visualizer.packages": {
       "fake_robot": "${workspaceFolder}/src/fake_robot"
   }
