@@ -6,16 +6,30 @@ To know ros path
 which ros2
 dirname $(dirname $(which ros2))
 
+add this line in the VS code "c_cpp_properties.json" to fix cpp header files not found issue
+"/opt/ros/jazzy/include/**"
+
 create a cpp pkg and inside cpp_ws create src and run following cmg
-ros2 pkg create --build-type ament_cmake cpp_pkg
-ros2 pkg create --build-type ament_cmake control_pkg
-ros2 pkg create --build-type ament_cmake py_pkg
+ros2 pkg create --build-type ament_cmake --license Apache-2.0 cpp_pubsub
+wget -O publisher_lambda_function.cpp https://raw.githubusercontent.com/ros2/examples/jazzy/rclcpp/topics/minimal_publisher/lambda.cpp
+    in CMakeList.txt
+        find_package(ament_cmake REQUIRED)
+        find_package(rclcpp REQUIRED)
+        find_package(std_msgs REQUIRED)
+
+        add_executable(talker src/publisher_lambda_function.cpp)
+        ament_target_dependencies(talker rclcpp std_msgs)
+
+        install(TARGETS
+        talker
+        DESTINATION lib/${PROJECT_NAME})
+
+ros2 pkg create --build-type ament_python --license Apache-2.0 py_pubsub
 
 to build cpp package 
 colcon build --packages-select cpp_pkg
 
-add this line in the VS code "c_cpp_properties.json" to fix cpp header files not found issue
-"/opt/ros/jazzy/include/**"
+
 
 Build Package cmd
 colcon build --packages-select cpp_pkg

@@ -6,8 +6,14 @@
         "span": "cpp",
         "chrono": "cpp"
     },
-    "cmake.sourceDirectory": "/home/chandhan/Documents/ros2/control_ws/src/control_pkg",
+    "cmake.sourceDirectory": "/home/chandhan/Documents/ros2_ws/src/cpp_pubsub",
     "urdf-visualizer.packages": {
       "fake_robot": "${workspaceFolder}/src/fake_robot"
-  }
+  },
+  "python.autoComplete.extraPaths": [
+    "/opt/ros/jazzy/lib/python3.12/site-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/ros/jazzy/lib/python3.12/site-packages"
+  ]
 }
